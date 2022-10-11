@@ -79,8 +79,11 @@ body {
     color: black;
 }
 .body {
-    color: #7D488C;
+    background-color: #7D488C;
 }
 .form {
 
+}
+.legend body{
+    color: #7D488C;
 }
