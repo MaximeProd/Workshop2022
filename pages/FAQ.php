@@ -9,7 +9,6 @@ require 'paterns/Head.php';
 <body>
 <main class="placement">
     <div class="font">
-
         <br>Qui somme-nous? <br>
         <br> Tarif <br>
         <br> Mention l'égale<br>
