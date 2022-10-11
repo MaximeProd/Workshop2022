@@ -1,5 +1,8 @@
 # Default ignored files
 /workspace.xml
+/modules.xml
+/vcs.xml
+/Workshop2022.iml
 /deployment.xml
 /modules.xml
 /vcs.xml

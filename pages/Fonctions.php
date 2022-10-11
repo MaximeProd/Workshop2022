@@ -15,6 +15,37 @@ function getDataBase() {
     return $bdd;
 }
 
+function getSalarieWithIdManager(PDO $bdd, $idManager) {
+    $query = "SELECT * FROM `salarie` WHERE IdEquipe = (Select IdEquipe FROM `salarie` where IdSalarie = {$idManager} LIMIT 1)";
+
+    $statement = $bdd->prepare($query);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchALL(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+}
+function checkfirstConnection(PDO $bdd, $idClient) {
+    $query = "Select * From salariepossession Where IdSalarie = {$idClient}";
+
+    $statement = $bdd->prepare($query);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchALL(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    if (isset($liste) and $liste > 0) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
 function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
     //Pour utiliser cette fonction il faut lui envoyer :
     //La bdd
