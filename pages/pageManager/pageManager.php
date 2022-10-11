@@ -1,49 +1,60 @@
 <?php
 require_once '../Fonctions.php';
 $bdd = getDataBase();
-$salarie = getSalarie($bdd);
+$manager = getSalarie($bdd);
 $salaries = getSalaries($bdd);
 
 ?>
-<h1>Bienvenue <?= $salarie->PrenomSalarie . " " . $salarie->NomSalarie; ?> </h1>
+
+<head>
+    <link rel="stylesheet" href="pageManager.css">
+</head>
+
+<h1>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h1>
 
 <h2>Liste de votre équipe :</h2>
 
 <ul>
     <?php
     foreach ($salaries as $s){
-        echo '<li>' . $s->PrenomSalarie . ' ' . $s->NomSalarie;
+        echo '<li class="salarie">' . $s->PrenomSalarie . ' ' . $s->NomSalarie;
 
-        $possessions = getSalariePossession($bdd);
+        $possessions = getSalariePossession($bdd, $s->IdSalarie);
 
         foreach ($possessions as $possession){
             $shouldDisplayButton = false;
-            echo '<ul>' . '<li ';
+            $color = 'black';
+
             switch ($possession->Qualite){
                 case "1":
-                    echo 'style="color:red;"';
+                    $color = "red";
                     $shouldDisplayButton = true;
                     break;
                 case "2":
-                    echo 'style="color:#bf5c00;"';
+                    $color = "#bf5c00";
                     $shouldDisplayButton = true;
                     break;
                 case "3":
-                    echo 'style="color:#a9bf00;"';
+                    $color = "#a9bf00";
                     $shouldDisplayButton = true;
                     break;
                 case "4":
-                    echo 'style="color:#00bf30;"';
+                    $color = "#00bf30";
                     $shouldDisplayButton = true;
                     break;
-                default:
-                    echo 'style="color:black;"';
-                    break;
             }
-            echo'>' . $possession->NomType . '</li>' . '</ul>';
+
+
+            echo '<ul>' .
+                    '<div class="materiel" >
+                        <li style="color: ' . $color . ';" >' . $possession->NomType . '</li>';
+
             if($shouldDisplayButton == true){
-                echo '<button>Faire une commande</button>';
+                echo    '<button>Faire une commande</button>';
             }
+
+            echo '    </div>
+                    </ul>';
         }
 
 

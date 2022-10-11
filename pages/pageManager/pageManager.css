@@ -1,3 +1,11 @@
-.besoin {
+.salarie{
+    padding-bottom: 25px;
+}
+
+.materiel {
     display: flex;
+}
+
+.materiel li {
+    width:100px;
 }
