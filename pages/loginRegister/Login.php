@@ -34,7 +34,7 @@ if(isset($bdd)){
 }
 
 if (isset($_SESSION['idClient'])){
-    header('Location: ../Index.php');
+    header('Location: ../EspacePersonnel.php');
 } else {
     header('Location: ../LoginRegister.php');
 }

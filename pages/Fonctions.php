@@ -15,6 +15,30 @@ function getDataBase() {
     return $bdd;
 }
 
+function afficherErreur($erreur = null){
+    if (!empty($erreur)){
+        $_SESSION["erreur"]=$erreur;
+    }
+    if (isset($_SESSION["erreur"])){
+        $valueErreur = $_SESSION["erreur"];
+        if ($valueErreur  == 1){
+            $erreur = 'Veuillez contacter l\'administrateur dès les plus bref délai!!';
+        } elseif ($valueErreur  == 2) {
+            $erreur = 'Mot de passe ou email incorrect';
+        } elseif ($valueErreur  == 3) {
+            $erreur = 'Email incorrect';
+        }
+        unset($_SESSION["erreur"]);
+    }
+    if (isset($erreur)){
+        echo '
+          <div class="erreur">
+            <p>' . $erreur . '</p>
+          </div>
+          ';
+    }
+}
+
 function getSalarieWithIdManager(PDO $bdd, $idManager) {
     $query = "SELECT * FROM `salarie` WHERE IdEquipe = (Select IdEquipe FROM `salarie` where IdSalarie = {$idManager} LIMIT 1)";
 

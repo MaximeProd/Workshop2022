@@ -1,9 +1,11 @@
 <?php
+require_once 'Fonctions.php';
 session_start();
-$idEtudiant = null;
+
 $Compte = 'Se connecter/Inscription';
 $lien = "LoginRegister.php";
 if (isset($_SESSION['idClient'])){
+    $idClient = $_SESSION['idClient'];
     $Compte = 'Mon Compte';
     $lien = "MonCompte.php";
 }
@@ -44,4 +46,8 @@ echo '
         '.$pageAdmin.'
         <li><a href="'.$lien.'">'.$Compte.'</a></li>
       </div>
-    ';?>
+      
+    ';
+afficherErreur();
+
+?>
