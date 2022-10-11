@@ -6,8 +6,8 @@
 //https://www.php.net/manual/fr/control-structures.foreach.php
 function getDataBase() {
     try {
-        $bdd = new PDO('mysql:host=mysql.montpellier.epsi.fr;dbname=bddneptune;charset=utf8;port=5206',
-            'maxime.bourrier', 'Cartoon-11', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=Workshop2022;charset=utf8',
+            'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     } catch (Exception $exception) {
         $bdd = null;
@@ -84,4 +84,8 @@ function displayChambre($chambres)
     else {
             echo "<p>Aucun résulat</p>";
         }
+}
+
+function getSalarie(PDO $bdd, $Email){
+    return getListe($bdd,'salarie',Array("email" => $Email),Array());
 }
