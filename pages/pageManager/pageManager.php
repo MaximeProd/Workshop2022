@@ -1,7 +1,7 @@
 <?php
 require_once '../Fonctions.php';
 $bdd = getDataBase();
-$manager = getSalarie($bdd);
+$manager = getListe($bdd,'salarie',Array("IdSalarie" => $_SESSION["idClient"]);
 $salaries = getSalaries($bdd);
 
 ?>
@@ -10,7 +10,7 @@ $salaries = getSalaries($bdd);
     <link rel="stylesheet" href="pageManager.css">
 </head>
 
-<h1>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h1>
+<h1>Bienvenue <?= $manager[0]->PrenomSalarie . " " . $manager[0]->NomSalarie; ?> </h1>
 
 <h2>Liste de votre équipe :</h2>
 

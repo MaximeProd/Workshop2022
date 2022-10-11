@@ -145,20 +145,6 @@ function getSalarie(PDO $bdd, $Email){
     return getListe($bdd,'salarie',Array("email" => $Email),Array());
 }
 
-function getManager(PDO $bdd, Array $args = []) {
-    $query = "SELECT * FROM salarie WHERE IdSalarie = 1";
-
-    $statement = $bdd->prepare($query);
-
-    $liste = null;
-    if ($statement->execute()) {
-        $liste = $statement->fetch(PDO::FETCH_OBJ);
-        //On finie par fermer la ressource
-        $statement->closeCursor();
-    }
-    return $liste;
-}
-
 function getSalaries(PDO $bdd, Array $args = []) {
     $query = "SELECT * FROM salarie WHERE IdEquipe = 1";
 
