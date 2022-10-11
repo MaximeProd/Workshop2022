@@ -14,7 +14,7 @@ $salaries = getSalaries($bdd);
 
 <h2>Liste de votre équipe :</h2>
 
-<ul>
+<ul class="liste-salarie">
     <?php
     foreach ($salaries as $s){
         echo '<li class="salarie">' . $s->PrenomSalarie . ' ' . $s->NomSalarie;
