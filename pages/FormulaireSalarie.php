@@ -13,12 +13,12 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: aquamarine;
+            background: darkcyan;
 
         }
         .header {
             overflow: hidden;
-            background-color: rebeccapurple;
+            background: linear-gradient(to bottom right, cyan, black);
             padding: 20px 10px;
         }
 
@@ -67,14 +67,7 @@
                 color: white;
             }
         }
-        .chaise{
-            color: rebeccapurple;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            line-height: 25px;
-            border-radius: 4px;
-        }
+
     </style>
 </head>
 <body>
@@ -86,6 +79,7 @@
         <a class="active" href="#home">Accueil</a>
         <a class= "manager" href="#contact">Page Manager</a>
         <a class= "salarié" href="#about">Page Salarié</a>
+        <a class= "salarié" href="#about">Formation</a>
     </div>
 </div>
 <body>
@@ -105,7 +99,7 @@
     </form>
     <form method="post" id="casque">
         <fieldset>
-            <legend>A quoi votre casque ressemble-t-elle?</legend>
+            <legend class="casque">A quoi votre casque ressemble-t-il?</legend>
             <label><input type="radio" name="radio"><img src="/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
             <label><input type="radio" name="radio"><img src="/image/casque/2.png"  width="200" height="180"></label>
             <label><input type="radio" name="radio"><img src="/image/casque/3.png"  width="200" height="180"></label>
@@ -115,7 +109,7 @@
     </form>
     <form method="post" id="clavier">
         <fieldset>
-            <legend>A quoi votre clavier ressemble-t-elle?</legend>
+            <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
             <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="180" onclick=onmousemove() </label>
             <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="180"></label>
             <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="180"></label>
@@ -125,7 +119,7 @@
     </form>
     <form method="post" id="souris">
         <fieldset>
-            <legend>A quoi votre souris ressemble-t-elle?</legend>
+            <legend class="souris">A quoi votre souris ressemble-t-elle?</legend>
             <label><input type="radio" name="radio"><img src="/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
             <label><input type="radio" name="radio"><img src="/image/souris/2.png"  width="200" height="180"></label>
             <label><input type="radio" name="radio"><img src="/image/souris/3.png"  width="200" height="180"></label>
@@ -139,7 +133,7 @@
 </center>
 <footer>
     <center>
-        <button id= "send" type="submit" onclick=myFunction()>Envoyez vos informations</button>
+        <button class= "send" id= "send" type="submit" onclick=myFunction()>Envoyez vos informations</button>
 
 
         <div class="alert success">

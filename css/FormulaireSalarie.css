@@ -1,7 +1,8 @@
 * {box-sizing: border-box;}
 
 body {
-    margin: 0;
+
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -78,12 +79,63 @@ body {
 .closebtn:hover {
     color: black;
 }
-.body {
-    background-color: #7D488C;
+.chaise{
+    color: rebeccapurple;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-weight: bold;
 }
-.form {
+.casque{
+    color: rebeccapurple;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.clavier{
+    color: rebeccapurple;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.souris{
+    color: rebeccapurple;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: none;
+    font-weight: bold;
 
 }
-.legend body{
-    color: #7D488C;
+button{
+display: inline-block;
+outline: 0;
+border: none;
+cursor: pointer;
+font-weight: 600;
+border-radius: 4px;
+font-size: 13px;
+height: 30px;
+background-color: #4C0099;
+color: white;
+padding: 0 20px;
+}
+fieldset {
+    border:none;
+
+}
+.souris1{
+      margin:0px;
+  }
+img{
+    margin-right:100px;
 }
