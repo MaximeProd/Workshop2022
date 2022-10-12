@@ -70,6 +70,20 @@ function checkfirstConnection(PDO $bdd, $idClient) {
     }
 }
 
+function getPath(){
+    $directory = $_SERVER["DOCUMENT_ROOT"];
+    if(gethostname() == 'DESKTOP-NS2VGVV')
+        return $directory;
+    else
+        return $directory."/Workshop2022/";
+}
+
+function redirectFormulaire(PDO $bdd, $idClient){
+    if(checkfirstConnection($bdd,$idClient)){
+        header('Location:'. getPath().'/pages/FormualaireSalarie.php');
+    }
+}
+
 function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
     //Pour utiliser cette fonction il faut lui envoyer :
     //La bdd

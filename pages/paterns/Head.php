@@ -12,15 +12,15 @@ if (isset($_SESSION['idClient'])){
     $idClient = $_SESSION['idClient'];
     $Compte = 'Mon Compte';
     $lien = "MonCompte.php";
+    $bdd = getDatabase();
+    redirectFormulaire($bdd, $idClient);
 }
 
-$_SESSION['admin'] = False;
 $admin = null;
 $pageAdmin = '';
-var_dump($_SESSION);
 if (isset($_SESSION['admin'])){
     $admin = $_SESSION['admin'];
-    if ($admin == true){
+    if ($admin == "1"){
     $pageAdmin = '<a class= "manager" href="#contact">Gérer les salariés</a>';
     }
 }

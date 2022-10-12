@@ -1,5 +1,6 @@
 <?php
-
+require_once "paterns/Head.php";
+var_dump(getPath());
 ?>
 <html lang="fr">
 <link rel="stylesheet" href="../css/FormulaireSalarie.css">
@@ -72,16 +73,6 @@
 </head>
 <body>
 
-<div class="header">
-    <i class='fas fa-air-freshener' style='font-size:48px;color:red'></i>
-    <a href="#default" class="logo">Ergonobro</a>
-    <div class="header-right">
-        <a class="active" href="#home">Accueil</a>
-        <a class= "manager" href="#contact">Page Manager</a>
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
-    </div>
-</div>
 <body>
 <br>
 <br>
@@ -90,7 +81,7 @@
     <form method="post" id="chaise">
         <fieldset>
             <legend class="chaise">A quoi votre chaise ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/image/chaise/1.png"  width="200" height="180" onclick="getSelection() " </label>
+            <label><input type="radio" name="radio"><img src="<?=getPath();?>image/chaise/1.png"  width="200" height="180" onclick="getSelection() " ></label>
             <label><input type="radio" name="radio"><img src="/image/chaise/2.png"  width="200" height="180"></label>
             <label><input type="radio" name="radio"><img src="/image/chaise/3.png"  width="200" height="180"></label>
             <label><input type="radio" name="radio"><img src="/image/chaise/4.png"  width="200" height="180"></label>

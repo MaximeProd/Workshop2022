@@ -35,9 +35,9 @@ if(isset($bdd)){
 }
 
 if (isset($_SESSION['idClient'])){
-    //header('Location: ../EspacePersonnel.php');
+    header('Location: ../EspacePersonnel.php');
 } else {
-    //header('Location: ../LoginRegister.php');
+    header('Location: ../LoginRegister.php');
 }
 //TODO AJOUTER UNE PAGE COMPTE
 
