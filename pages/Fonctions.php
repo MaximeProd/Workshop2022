@@ -100,7 +100,6 @@ function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
     foreach ($args as $key => $arg) {
 
         if ($search) {
-            var_dump($search);
             $arg = $arg . '%';
         }
         $para = ':p_'.$key;
@@ -131,7 +130,6 @@ function getFirst(PDO $bdd, $table ,Array $args = [], $search = False) {
     foreach ($args as $key => $arg) {
 
         if ($search) {
-            var_dump($search);
             $arg = $arg . '%';
         }
         $para = ':p_'.$key;
@@ -179,13 +177,21 @@ function getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {
     return $liste;
 }
 
-function getFutureFormation(PDO $bdd, $dateAjd){
-    $query = "SELECT * FROM formation
-         WHERE DateFormation > :dateAjd
-         ORDER BY DateFormation;";
+function getFutureFormation(PDO $bdd, $dateAjd, $idEquipe, $getOnlyNotInscrit){
+    $query = "SELECT * FROM formation where IdFormation";
+
+    if($getOnlyNotInscrit)
+        $query = $query . " not in ";
+    else
+        $query = $query . " in ";
+
+    $query = $query . "(select IdFormation from equipeparticipation where IdEquipe = :idEquipe) 
+        and DateFormation > :dateAjd
+         ORDER BY DateFormation";
 
     $statement = $bdd->prepare($query);
     $statement->bindParam(':dateAjd', $dateAjd);
+    $statement->bindParam(':idEquipe', $idEquipe);
 
     $liste = null;
     if ($statement->execute()) {
