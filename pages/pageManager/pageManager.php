@@ -110,6 +110,3 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
 
     </div>
 </div>
-
-<?php
-require_once "../paterns/Foot.php";
