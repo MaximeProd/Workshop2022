@@ -80,7 +80,7 @@ body {
     color: black;
 }
 .chaise{
-    color: rebeccapurple;
+    color: rgb(0,147,147);
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -89,7 +89,8 @@ body {
     font-weight: bold;
 }
 .casque{
-    color: rebeccapurple;
+    color: rgb(0,147,147);
+    padding: 12px;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -98,7 +99,8 @@ body {
     font-weight: bold;
 }
 .clavier{
-    color: rebeccapurple;
+    color: rgb(0,147,147);
+    padding: 12px;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -107,7 +109,8 @@ body {
     font-weight: bold;
 }
 .souris{
-    color: rebeccapurple;
+    color: rgb(0,147,147);
+    padding: 12px;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;

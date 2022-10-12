@@ -13,7 +13,7 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: darkcyan;
+            background: darkslategrey;
             background-repeat: no-repeat;
             background-attachment: fixed;
 
@@ -84,7 +84,7 @@
         <a class= "salarié" href="#formation">Formation</a>
     </div>
 </div>
-<body>
+
 <br>
 <br>
 <br>
@@ -135,31 +135,34 @@
 </center>
 <footer>
     <center>
-        <button class= "send" id= "send" type="submit" onclick=myFunction()>Envoyez vos informations</button>
+        <button class= "send" id= "Button1" type="submit" onclick=myFunction()>Envoyez vos informations</button>
 
 
-        <div class="alert success">
-            <span class="closebtn">&times;</span>
-            <strong>Informations bien envoyé</strong>
-        </div>
 
 
 </center>
 </footer>
 
-    <script>
+
+</body>
+<script>
     var close = document.getElementsByClassName("closebtn");
     var i;
 
     for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
     }
-    }
-    </script>
+    <script type="text/javascript">
+        $(function () {
+        $("#Button1").on('click', function () {
+            $("#Button2").show();
+        });
+    });
+</script>
 
-
-</body>
+</script>
 </html>
