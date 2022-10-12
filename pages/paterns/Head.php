@@ -1,6 +1,9 @@
 <?php
 $directory = $_SERVER["DOCUMENT_ROOT"];
-require_once $directory . '/pages/Fonctions.php';
+if(gethostname() == 'DESKTOP-NS2VGVV')
+    require_once $directory . '/pages/Fonctions.php';
+else
+    require_once $directory . '/Workshop2022/pages/Fonctions.php';
 session_start();
 
 $Compte = 'Se connecter/Inscription';
