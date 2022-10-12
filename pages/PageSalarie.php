@@ -1,8 +1,5 @@
 <?php
 require_once "paterns/Head.php";
-$nom
-$prenom
-
 ?>
 <html lang="fr">
 <link rel="stylesheet" href="../css/PageSalarie.css">
