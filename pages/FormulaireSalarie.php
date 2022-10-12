@@ -124,7 +124,7 @@ require_once "paterns/Head.php";
 
 
 </center>
-<footer>
+
     <center>
         <button class= "send" id= "Button1" type="submit" onclick=myFunction()>Envoyez vos informations</button>
 
@@ -132,7 +132,7 @@ require_once "paterns/Head.php";
 
 
 </center>
-</footer>
+
 
 
 </body>
