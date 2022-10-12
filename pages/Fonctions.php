@@ -185,14 +185,12 @@ function getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {
 }
 
 function getFutureFormation(PDO $bdd, $dateAjd){
-    $query = "SELECT * FROM salarie, salariepossession, type_materiel 
-         WHERE salariepossession.IdSalarie = salarie.IdSalarie 
-           and salariepossession.IdType = type_materiel.IdType
-           and salarie.IdSalarie = :idSalarie
-         ORDER BY salariepossession.Qualite;";
+    $query = "SELECT * FROM formation
+         WHERE DateFormation > :dateAjd
+         ORDER BY DateFormation;";
 
     $statement = $bdd->prepare($query);
-    $statement->bindParam(':idSalarie', $idSalarie);
+    $statement->bindParam(':dateAjd', $dateAjd);
 
     $liste = null;
     if ($statement->execute()) {

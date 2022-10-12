@@ -1,5 +1,14 @@
+.pageManager{
+    display:flex ;
+}
+
+.liste-salaries {
+    width: 70%;
+}
+
 .liste-salarie{
     list-style: none;
+    display: block;
 }
 
 ul{
@@ -22,8 +31,8 @@ ul{
     width:100px;
 }
 
-.materiel button{
-    background-color: #440670;
+button{
+    background-color: darkcyan;
     border: none;
     border-radius: 30px;
     color: white;
@@ -34,4 +43,13 @@ ul{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.materiel button:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
