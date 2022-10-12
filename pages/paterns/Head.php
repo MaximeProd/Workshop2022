@@ -1,6 +1,6 @@
 <?php
 $directory = $_SERVER["DOCUMENT_ROOT"];
-if(gethostname() == 'DESKTOP-NS2VGVV')
+if(gethostname() == 'DESKTOP-NS2VGVV' or 'DESKTOP-CQRJMIK')
     require_once $directory . '/pages/Fonctions.php';
 else
     require_once $directory . '/Workshop2022/pages/Fonctions.php';
@@ -46,8 +46,8 @@ echo '
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
         
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
+        <a class= "salarié" href="PageSalarie.php">Page Salarié</a>
+        <a class= "formation" href="Formation.php">Formation</a>
         <a href="EspacePersonnel.php">EspacePersonnel</a>
         '.$pageAdmin.'
         <a href="'.$lien.'">'.$Compte.'</a>
