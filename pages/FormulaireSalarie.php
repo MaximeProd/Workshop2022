@@ -20,7 +20,7 @@ echo '
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: darkslategrey;
+            background: #c0edf0;
             background-repeat: no-repeat;
             background-attachment: fixed;
 
@@ -134,6 +134,3 @@ echo '
 
 </body>
 ';
-
-require_once "paterns/Foot.php";
-
