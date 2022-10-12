@@ -201,3 +201,50 @@ function getFutureFormation(PDO $bdd, $dateAjd, $idEquipe, $getOnlyNotInscrit){
     }
     return $liste;
 }
+
+function insertListe(PDO $bdd,$toTable,Array $args) {
+    //Pour utiliser cette fonction il faut lui envoyer :
+    //La bdd
+    //Le(s) table au quel on veux insérer
+    //Une liste des insertion à faire :
+    // array(arg1 => modif1, arg2 => modif2, etc)
+    //Avec un exemple :
+    // array( 'idClient' => 15, 'prenom' => 'Maxime')
+    $tableValues = '';
+    $values = '';
+    foreach ($args as $key => $arg) {
+        $tableValues = "{$tableValues},{$key}";
+        $values = "{$values},:p_{$key}";
+    }
+    //On supprime la première virgule parasite
+    $tableValues = substr($tableValues, 1);
+    $values = substr($values, 1);
+    //On construit le query
+    $query = "INSERT INTO {$toTable}({$tableValues}) VALUES ({$values}) ";
+    //Affectation des paramètres (Pour rappel les paramètres (parg) sont une sécuritée)
+    $statement = $bdd->prepare($query);
+    foreach ($args as $key => $arg) {
+        $para = ':p'.$key;
+        $statement->bindValue($para, $arg);
+    }
+    //var_dump($statement);
+    //On réalise l'insertion
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function updateLine(PDO $bdd, $oldType,$idSalarie,$Qualite) {
+    $query = "UPDATE salariepossession SET Qualite={$Qualite} WHERE IdSalarie={$idSalarie} AND IdType={$oldType}";
+
+    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)
+    $statement = $bdd->prepare($query);
+
+
+    //On réalise la requète et on renvoie le résultat
+    $liste = null;
+    if ($statement->execute()) {
+
+        $statement->closeCursor();
+    }
+    return $liste;
+}

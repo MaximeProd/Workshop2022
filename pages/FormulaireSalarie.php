@@ -4,7 +4,10 @@ require_once "paterns/Head.php";
 //getListe($bdd, );
 
 $record['picture_id'] = "1";
-
+$poss1 = getFirst($bdd, 'salariepossession', ["IdType"=>3, "IdSalarie"=>$_SESSION['idClient']],'*');
+$poss2 = getFirst($bdd, 'salariepossession', ["IdType"=>4, "IdSalarie"=>$_SESSION['idClient']],'*');
+$poss3 = getFirst($bdd, 'salariepossession', ["IdType"=>1, "IdSalarie"=>$_SESSION['idClient']],'*');
+$poss4 = getFirst($bdd, 'salariepossession', ["IdType"=>2, "IdSalarie"=>$_SESSION['idClient']],'*');
 
 
 echo '
@@ -86,48 +89,48 @@ echo '
 <br>
 <br>
 <center>
-<form method="post" id="mainform">
-    <div method="post" id="chaise" action="formulaireManager/FormulaireSave.php">
+<form method="post" id="mainform"  action="formulaireManager/FormulaireSave.php">
+    <div id="chaise">
         <fieldset>
             <legend class="chaise">A quoi votre chaise ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/1.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180" onclick="getSelection() " ></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/2.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/3.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/4.png" data-picture_id="'.$record['picture_id'].' "width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/5.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="3" value="1" '.(($poss1->Qualite == 1)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/chaise/1.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180" onclick="getSelection() " ></label>
+            <label><input type="radio" name="3" value="2" '.(($poss1->Qualite == 2)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/chaise/2.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="3" value="3" '.(($poss1->Qualite == 3)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/chaise/3.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="3" value="4" '.(($poss1->Qualite == 4)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/chaise/4.png" data-picture_id="'.$record['picture_id'].' "width="200" height="180"></label>
+            <label><input type="radio" name="3" value="5" '.(($poss1->Qualite == 5)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/chaise/5.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
         </fieldset>
     </div>
-    <div method="post" id="casque">
+    <div  id="casque">
         <fieldset>
             <legend class="casque">A quoi votre casque ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="4" value="1" '.(($poss2->Qualite == 1)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
+            <label><input type="radio" name="4" value="2" '.(($poss2->Qualite == 2)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/casque/2.png"  width="200" height="180"></label>
+            <label><input type="radio" name="4" value="3" '.(($poss2->Qualite == 3)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/casque/3.png"  width="200" height="180"></label>
+            <label><input type="radio" name="4" value="4" '.(($poss2->Qualite == 4)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/casque/4.png"  width="200" height="180"></label>
+            <label><input type="radio" name="4" value="5" '.(($poss2->Qualite == 5)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/casque/5.png"  width="200" height="180"></label>
         </fieldset>
     </div>
-    <div method="post" id="clavier">
+    <div  id="clavier">
         <fieldset>
             <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/2.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/3.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/4.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/5.png"  width="200" height="130"></label>
+            <label><input type="radio" name="1" value="1" '.(($poss3->Qualite == 1)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
+            <label><input type="radio" name="1" value="2" '.(($poss3->Qualite == 2)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/clavier/2.png"  width="200" height="130"></label>
+            <label><input type="radio" name="1" value="3" '.(($poss3->Qualite == 3)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/clavier/3.png"  width="200" height="130"></label>
+            <label><input type="radio" name="1" value="4" '.(($poss3->Qualite == 4)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/clavier/4.png"  width="200" height="130"></label>
+            <label><input type="radio" name="1" value="5" '.(($poss3->Qualite == 5)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/clavier/5.png"  width="200" height="130"></label>
         </fieldset>
     </div>
-    <div method="post" id="souris">
+    <div  id="souris">
         <fieldset>
             <legend class="souris">A quoi votre souris ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="2" value="1" '.(($poss4->Qualite == 1)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
+            <label><input type="radio" name="2" value="2" '.(($poss4->Qualite == 2)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/souris/2.png"  width="200" height="180"></label>
+            <label><input type="radio" name="2" value="3" '.(($poss4->Qualite == 3)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/souris/3.png"  width="200" height="180"></label>
+            <label><input type="radio" name="2" value="4" '.(($poss4->Qualite == 4)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/souris/4.png"  width="200" height="180"></label>
+            <label><input type="radio" name="2" value="5" '.(($poss4->Qualite == 5)?"checked=\"checked\"":"").'><img src="/Workshop2022/image/souris/5.png"  width="200" height="180"></label>
         </fieldset>
     </div>
-    <button class="send" id= "Button1" type="submit" >Envoyez vos informations</button>
+    <input class="send" type="submit" >Envoyez vos informations</input>
 </form>
 
 
