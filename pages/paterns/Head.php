@@ -1,6 +1,6 @@
 <?php
 $directory = $_SERVER["DOCUMENT_ROOT"];
-if(gethostname() == 'DESKTOP-NS2VGVV')
+if(gethostname() == 'DESKTOP-NS2VGVV' or gethostname() == 'DESKTOP-CQRJMIK')
     require_once $directory . '/pages/Fonctions.php';
 else
     require_once $directory . '/Workshop2022/pages/Fonctions.php';
@@ -43,14 +43,13 @@ echo '
     <div class="header">
     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
     <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
-    <div class="header-right">
-        <a class="active" href="#home">Accueil</a>
-        
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
+    <div class="header-right">        
+        <a class="salarie" href="PageSalarie.php">Page Salarié</a>
+        <a class="formulaire" href="FormulaireSalarie.php">Formulaire</a>
+        <a class="formation" href="Formation.php">Formation</a>
         <a href="EspacePersonnel.php">EspacePersonnel</a>
         '.$pageAdmin.'
-        <a href="'.$lien.'">'.$Compte.'</a>
+        <a  class="active" href="'.$lien.'">'.$Compte.'</a>
     </div>
 </div>
      <main>
