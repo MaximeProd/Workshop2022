@@ -1,16 +1,15 @@
 <?php
+require "Fonctions.php";
 //Une variable $idClient est disponible à chaque page.
 require 'paterns/Head.php';
-
 //Partie code
 if (!isset($_SESSION['idClient'])){
     header('Location: LoginRegister.php');
 } else {
+    $bdd = getDatabase();
     if (isset($bdd)) {
-        $membre = getListe($bdd, "membres", array("id" => $idClient));
+        $membre = getListe($bdd, "salarie", array("IdSalarie" => $idClient));
 
-        //var_dump($idClient                                                                                    );
-        //var_dump($membre);
         $membre = $membre[0];
 
         echo '<link rel="stylesheet" href="../css/MonCompte.css">
@@ -21,12 +20,9 @@ if (!isset($_SESSION['idClient'])){
                   <h4>Informations personnelles</h4>
                   <hr>
                   <form class="" action="loginRegister/Update.php" method="post">
-                      <input type="hidden" name="civilite"        value="' . $membre->civilite . '" required>
-                      <label for="nom">Nom</label>                 <input type="text" name="nom"        value="' . $membre->nom . '"            placeholder="Nom"            maxlength="100" minlength="3" required>
-                      <label for="prenom">Prénom</label>           <input type="text" name="prenom"     value="' . $membre->prenom . '"         placeholder="Prénom"         maxlength="70"  minlength="3" required>
-                      <label for="adresse">Adresse</label>         <input type="text" name="adresse"    value="' . $membre->adresse . '"        placeholder="Adresse"        maxlength="200">
-                      <label for="ville">Ville</label>             <input type="text" name="ville"      value="' . $membre->ville . '"          placeholder="Ville"          maxlength="200">
-                      <label for="codePostal">Code postal</label>  <input type="text" name="codePostal" value="' . $membre->codePostal . '"     placeholder="Code postal"    maxlength="10">
+                      <label for="nom">Nom</label>                 <input type="text" name="nom"        value="' . $membre->NomSalarie . '"            placeholder="Nom"            maxlength="100" minlength="3" required>
+                      <label for="prenom">Prénom</label>           <input type="text" name="prenom"     value="' . $membre->PrenomSalarie . '"         placeholder="Prénom"         maxlength="70"  minlength="3" required>
+                      <label for="adresse">Adresse</label>         <input type="text" name="adresse"    value="' . $membre->Adresse . '"        placeholder="Adresse"        maxlength="200">
                     <input id="Modif" type="submit" name="" value="Modifier son compte">
                   </form>
                 </div>

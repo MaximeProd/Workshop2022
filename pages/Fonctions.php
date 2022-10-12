@@ -6,13 +6,68 @@
 //https://www.php.net/manual/fr/control-structures.foreach.php
 function getDataBase() {
     try {
-        $bdd = new PDO('mysql:host=mysql.montpellier.epsi.fr;dbname=bddneptune;charset=utf8;port=5206',
-            'maxime.bourrier', 'Cartoon-11', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=Workshop2022;charset=utf8',
+            'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     } catch (Exception $exception) {
         $bdd = null;
     }
     return $bdd;
+}
+
+function afficherErreur($erreur = null){
+    if (!empty($erreur)){
+        $_SESSION["erreur"]=$erreur;
+    }
+    if (isset($_SESSION["erreur"])){
+        $valueErreur = $_SESSION["erreur"];
+        if ($valueErreur  == 1){
+            $erreur = 'Veuillez contacter l\'administrateur dès les plus bref délai!!';
+        } elseif ($valueErreur  == 2) {
+            $erreur = 'Mot de passe ou email incorrect';
+        } elseif ($valueErreur  == 3) {
+            $erreur = 'Email incorrect';
+        }
+        unset($_SESSION["erreur"]);
+    }
+    if (isset($erreur)){
+        echo '
+          <div class="erreur">
+            <p>' . $erreur . '</p>
+          </div>
+          ';
+    }
+}
+
+function getSalarieWithIdManager(PDO $bdd, $idManager) {
+    $query = "SELECT * FROM `salarie` WHERE IdEquipe = (Select IdEquipe FROM `salarie` where IdSalarie = {$idManager} LIMIT 1)";
+
+    $statement = $bdd->prepare($query);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchALL(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+}
+function checkfirstConnection(PDO $bdd, $idClient) {
+    $query = "Select * From salariepossession Where IdSalarie = {$idClient}";
+
+    $statement = $bdd->prepare($query);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchALL(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    if (isset($liste) and $liste > 0) {
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
@@ -84,4 +139,8 @@ function displayChambre($chambres)
     else {
             echo "<p>Aucun résulat</p>";
         }
+}
+
+function getSalarie(PDO $bdd, $Email){
+    return getListe($bdd,'salarie',Array("email" => $Email),Array());
 }
