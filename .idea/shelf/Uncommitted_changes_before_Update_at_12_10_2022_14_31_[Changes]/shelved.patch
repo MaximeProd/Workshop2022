@@ -1,0 +1,149 @@
+Index: css/index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n\r\n/*GENERAL*/\r\n*{\r\n  margin:0\r\n}\r\n/*\r\n.fake{\r\n  height: 2000px\r\n}\r\n*/\r\n/*MAIN */\r\nmain{\r\n  background: linear-gradient(#2C0238, #602870) ;\r\n  height:auto;\r\n  width:100%;\r\n  font-size: 1vw;\r\n  color:#FFF;\r\n  padding-bottom: 1vw;\r\n  min-height: 100%;\r\n}\r\n/*Fake Header*/\r\nheader img{\r\n  height: 10vw;\r\n  width: 10vw;\r\n}\r\n\r\nhtml, body {\r\n  height: 100%;\r\n  margin: 0; padding: 0;\r\n}\r\nbody {\r\n  display : table;\r\n  width: 100%;\r\n}\r\n\r\n.haut{\r\n  position: relative;\r\n  z-index: 10;\r\n  overflow: hidden;\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  background: linear-gradient(to right,#2C0238, #7D488C);\r\n}\r\n\r\nh1{\r\n  font-size: 5vw;\r\n  color: white;\r\n  font-family: 'Sniglet', sans-serif;\r\n}\r\nh2{\r\n  color: Black;\r\n}\r\n\r\n.liste{\r\n  z-index: 10;\r\n  overflow: hidden;\r\n  position: sticky;\r\n  top:0;\r\n  background: linear-gradient(to right,#2C0238, #7D488C);\r\n  height: 2vw;\r\n  font-family: 'Acme', sans-serif;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  list-style: none;\r\n}\r\n\r\n.liste li a{\r\n  display: flex;\r\n  justify-content: center;\r\n  text-align: center;\r\n  text-decoration: none;\r\n  font-size: 1.5vw;\r\n  color: white;\r\n  min-width: 10vw;\r\n}\r\n.liste li:hover{\r\n  display: flex;\r\n  align-items: center;\r\n  text-decoration: none;\r\n  background-image: radial-gradient(ellipse at 50% 110%, rgba(255,255,255,0.50)10%,transparent 75%);\r\n  height: fill;\r\n  padding-bottom: 0.25vw;\r\n  min-width: 1vw;\r\n}\r\n\r\n/*FOOTER*/\r\n\r\nfooter {\r\n  position:absolute;\r\n  width: 100%;\r\n  background-color: #4C0099;\r\n}\r\n.footer{\r\n  height: 4vw;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  font-size: 1vw;\r\n}\r\n\r\n.footer a, .Copyright p{\r\n  text-decoration: none;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  font-family: 'Acme', sans-serif;\r\n  color: grey;\r\n  font-size: 1vw;\r\n}\r\n.footer a:hover{\r\n  text-shadow: 140vw 0 9vw black;\r\n  color: white;\r\n}\r\n\r\n/*Chambre*/\r\n\r\n.fake {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n\r\n::-webkit-scrollbar {\r\n  display: none;\r\n}\r\n\r\n\r\n.erreur{\r\n  z-index: -1;\r\n  border-radius: 0 0 1.5vw 1.5vw;\r\n  padding-left: 2vw;\r\n  display: flex;\r\n  align-items: center;\r\n  animation : open;\r\n  animation-duration: 1.2s;\r\n  color: white;\r\n  background-color: red;\r\n  font-size: 2.5vw;\r\n  font-family: 'Acme', sans-serif;\r\n  text-decoration: none;\r\n  overflow: hidden;\r\n}\r\n\r\n\r\n@keyframes open {\r\n  to {transform: translateY(0);}\r\n  from {transform: translateY(-100%)}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/css/index.css b/css/index.css
+--- a/css/index.css	(revision 27e146b4c8a41ddda564c2da1a7e6213c042dcd3)
++++ b/css/index.css	(date 1665577558394)
+@@ -11,7 +11,7 @@
+ */
+ /*MAIN */
+ main{
+-  background: linear-gradient(#2C0238, #602870) ;
++  background: linear-gradient(#c5edea, #a5ccc9) ;
+   height:auto;
+   width:100%;
+   font-size: 1vw;
+@@ -41,7 +41,7 @@
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+-  background: linear-gradient(to right,#2C0238, #7D488C);
++  background: linear-gradient(to right,#c5edea, #a5ccc9);
+ }
+ 
+ h1{
+@@ -58,7 +58,7 @@
+   overflow: hidden;
+   position: sticky;
+   top:0;
+-  background: linear-gradient(to right,#2C0238, #7D488C);
++  background: linear-gradient(to right,#c5edea, #a5ccc9);
+   height: 2vw;
+   font-family: 'Acme', sans-serif;
+   display: flex;
+@@ -91,7 +91,7 @@
+ footer {
+   position:absolute;
+   width: 100%;
+-  background-color: #4C0099;
++  background-color: #64a1a1;
+ }
+ .footer{
+   height: 4vw;
+@@ -107,7 +107,7 @@
+   display: flex;
+   justify-content: center;
+   font-family: 'Acme', sans-serif;
+-  color: grey;
++  color: black;
+   font-size: 1vw;
+ }
+ .footer a:hover{
+Index: pages/paterns/Head.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n$directory = $_SERVER[\"DOCUMENT_ROOT\"];\r\nif(gethostname() == 'DESKTOP-NS2VGVV' or 'DESKTOP-CQRJMIK')\r\n    require_once $directory . '/pages/Fonctions.php';\r\nelse\r\n    require_once $directory . '/Workshop2022/pages/Fonctions.php';\r\nsession_start();\r\n\r\n$Compte = 'Se connecter/Inscription';\r\n$lien = \"LoginRegister.php\";\r\nif (isset($_SESSION['idClient'])){\r\n    $idClient = $_SESSION['idClient'];\r\n    $Compte = 'Mon Compte';\r\n    $lien = \"MonCompte.php\";\r\n    $bdd = getDatabase();\r\n    redirectFormulaire($bdd, $idClient);\r\n}\r\n\r\n$admin = null;\r\n$pageAdmin = '';\r\nif (isset($_SESSION['admin'])){\r\n    $admin = $_SESSION['admin'];\r\n    if ($admin == \"1\"){\r\n    $pageAdmin = '<a class= \"manager\" href=\"#contact\">Gérer les salariés</a>';\r\n    }\r\n}\r\n\r\necho '\r\n<!DOCTYPE html>\r\n<html lang=\"fr\" dir=\"ltr\">\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <title>Hotel Neptune</title>\r\n    <link rel=\"stylesheet\" href=\"../css/index.css\">\r\n    <link rel=\"stylesheet\" href=\"../css/header.css\">\r\n    <link href=\"https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap\" rel=\"stylesheet\">\r\n    <!--\r\n    font-family: \"Sniglet\", cursive; →Titre\r\n    font-family: \"Acme\", sans-serif; →Texte\r\n  -->\r\n  </head>\r\n  <body>\r\n    <div class=\"header\">\r\n    <i class=\\'fas fa-air-freshener\\' style=\\'font-size:48px;color:red\\'></i>\r\n    <a href=\"#default\" class=\"logo\">Ergonobro</a>\r\n    <div class=\"header-right\">        \r\n        <a class=\"salarie\" href=\"PageSalarie.php\">Page Salarié</a>\r\n        <a class=\"formulaire\" href=\"FormulaireSalarie.php\">Formulaire</a>\r\n        <a class=\"formation\" href=\"Formation.php\">Formation</a>\r\n        <a href=\"EspacePersonnel.php\">EspacePersonnel</a>\r\n        '.$pageAdmin.'\r\n        <a  class=\"active\" href=\"'.$lien.'\">'.$Compte.'</a>\r\n    </div>\r\n</div>\r\n     <main>\r\n\r\n      \r\n    ';\r\nafficherErreur();\r\n\r\n?>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/paterns/Head.php b/pages/paterns/Head.php
+--- a/pages/paterns/Head.php	(revision 27e146b4c8a41ddda564c2da1a7e6213c042dcd3)
++++ b/pages/paterns/Head.php	(date 1665577558396)
+@@ -1,6 +1,6 @@
+ <?php
+ $directory = $_SERVER["DOCUMENT_ROOT"];
+-if(gethostname() == 'DESKTOP-NS2VGVV' or 'DESKTOP-CQRJMIK')
++if(gethostname() == 'DESKTOP-NS2VGVV' or gethostname() == 'DESKTOP-CQRJMIK')
+     require_once $directory . '/pages/Fonctions.php';
+ else
+     require_once $directory . '/Workshop2022/pages/Fonctions.php';
+@@ -30,7 +30,7 @@
+ <html lang="fr" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+-    <title>Hotel Neptune</title>
++    <title>Ergonobro</title>
+     <link rel="stylesheet" href="../css/index.css">
+     <link rel="stylesheet" href="../css/header.css">
+     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
+@@ -42,11 +42,11 @@
+   <body>
+     <div class="header">
+     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
+-    <a href="#default" class="logo">Ergonobro</a>
+-    <div class="header-right">        
+-        <a class="salarie" href="PageSalarie.php">Page Salarié</a>
+-        <a class="formulaire" href="FormulaireSalarie.php">Formulaire</a>
+-        <a class="formation" href="Formation.php">Formation</a>
++    <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
++    <div class="header-right">
++        <a class="active" href="#home">Accueil</a>
++        <a class= "salarié" href="#about">Page Salarié</a>
++        <a class= "salarié" href="#about">Formation</a>
+         <a href="EspacePersonnel.php">EspacePersonnel</a>
+         '.$pageAdmin.'
+         <a  class="active" href="'.$lien.'">'.$Compte.'</a>
+Index: pages/Fonctions.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<?php\r\n//Session :\r\n//https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/4239476-session-cookies\r\n//Array :\r\n//https://www.php.net/manual/fr/control-structures.foreach.php\r\nfunction getDataBase() {\r\n    try {\r\n        $bdd = new PDO('mysql:host=localhost;dbname=Workshop2022;charset=utf8',\r\n            'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));\r\n\r\n    } catch (Exception $exception) {\r\n        $bdd = null;\r\n    }\r\n    return $bdd;\r\n}\r\n\r\nfunction afficherErreur($erreur = null){\r\n    if (!empty($erreur)){\r\n        $_SESSION[\"erreur\"]=$erreur;\r\n    }\r\n    if (isset($_SESSION[\"erreur\"])){\r\n        $valueErreur = $_SESSION[\"erreur\"];\r\n        if ($valueErreur  == 1){\r\n            $erreur = 'Veuillez contacter l\\'administrateur dès les plus bref délai!!';\r\n        } elseif ($valueErreur  == 2) {\r\n            $erreur = 'Mot de passe ou email incorrect';\r\n        } elseif ($valueErreur  == 3) {\r\n            $erreur = 'Email incorrect';\r\n        }\r\n        unset($_SESSION[\"erreur\"]);\r\n    }\r\n    if (isset($erreur)){\r\n        echo '\r\n          <div class=\"erreur\">\r\n            <p>' . $erreur . '</p>\r\n          </div>\r\n          ';\r\n    }\r\n}\r\n\r\nfunction getSalarieWithIdManager(PDO $bdd, $idManager) {\r\n    $query = \"SELECT * FROM `salarie` WHERE IdEquipe = (Select IdEquipe FROM `salarie` where IdSalarie = {$idManager} LIMIT 1)\";\r\n\r\n    $statement = $bdd->prepare($query);\r\n\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetchALL(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    return $liste;\r\n}\r\nfunction checkfirstConnection(PDO $bdd, $idClient) {\r\n    $query = \"Select * From salariepossession Where IdSalarie = {$idClient}\";\r\n\r\n    $statement = $bdd->prepare($query);\r\n\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetchALL(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    if (isset($liste) and $liste > 0) {\r\n        return false;\r\n    }else{\r\n        return true;\r\n    }\r\n}\r\n\r\nfunction getPath(){\r\n    $directory = $_SERVER[\"DOCUMENT_ROOT\"];\r\n    if(gethostname() == 'DESKTOP-NS2VGVV')\r\n        return $directory;\r\n    else\r\n        return $directory.\"/Workshop2022/\";\r\n}\r\n\r\nfunction redirectFormulaire(PDO $bdd, $idClient){\r\n    if(checkfirstConnection($bdd,$idClient)){\r\n        header('Location:'. getPath().'/pages/FormualaireSalarie.php');\r\n    }\r\n}\r\n\r\nfunction getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {\r\n    //Pour utiliser cette fonction il faut lui envoyer :\r\n    //La bdd\r\n    //Le(s) table au quel on veux accéder\r\n    //Une liste des condtions à récupérer tel que :\r\n    // array(arg1 => value1, arg2 => value 2, etc)\r\n    //Avec un exemple :\r\n    // array( 'idClient' => 15, 'prenom' => 'Maxime')\r\n\r\n    $query = \"SELECT * FROM {$askListe} WHERE 1 \";\r\n\r\n    //Etape 1 : On génère la requête sql avec les arguments demandés :\r\n    foreach ($args as $key => $arg) {\r\n        $query = \"{$query} AND {$key} LIKE :p_{$key} \";\r\n    }\r\n\r\n    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)\r\n    $statement = $bdd->prepare($query);\r\n    foreach ($args as $key => $arg) {\r\n\r\n        if ($search) {\r\n            var_dump($search);\r\n            $arg = $arg . '%';\r\n        }\r\n        $para = ':p_'.$key;\r\n        $statement->bindValue($para, $arg);\r\n    }\r\n\r\n    //On réalise la requète et on renvoie le résultat\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetchALL(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    return $liste;\r\n}\r\n\r\nfunction getFirst(PDO $bdd, $table ,Array $args = [], $search = False) {\r\n    $query = \"SELECT * FROM {$table} WHERE 1 \";\r\n\r\n    //Etape 1 : On génère la requête sql avec les arguments demandés :\r\n    foreach ($args as $key => $arg) {\r\n        $query = \"{$query} AND {$key} LIKE :p_{$key} \";\r\n    }\r\n    $query = \"{$query} LIMIT 1\";\r\n\r\n    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)\r\n    $statement = $bdd->prepare($query);\r\n    foreach ($args as $key => $arg) {\r\n\r\n        if ($search) {\r\n            var_dump($search);\r\n            $arg = $arg . '%';\r\n        }\r\n        $para = ':p_'.$key;\r\n        $statement->bindValue($para, $arg);\r\n    }\r\n\r\n    //On réalise la requète et on renvoie le résultat\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetch(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    return $liste;\r\n}\r\n\r\nfunction getPost($askGet){\r\n    if (isset($_POST[$askGet])) {\r\n        return htmlspecialchars($_POST[$askGet]);\r\n    } else {\r\n        return '';\r\n    }\r\n}\r\n\r\nfunction getSalarie(PDO $bdd, $Email){\r\n    return getListe($bdd,'salarie',Array(\"email\" => $Email),Array());\r\n}\r\n\r\nfunction getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {\r\n    $query = \"SELECT * FROM salarie, salariepossession, type_materiel \r\n         WHERE salariepossession.IdSalarie = salarie.IdSalarie \r\n           and salariepossession.IdType = type_materiel.IdType\r\n           and salarie.IdSalarie = :idSalarie\r\n         ORDER BY salariepossession.Qualite;\";\r\n\r\n    $statement = $bdd->prepare($query);\r\n    $statement->bindParam(':idSalarie', $idSalarie);\r\n\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetchAll(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    return $liste;\r\n}\r\n\r\nfunction getFutureFormation(PDO $bdd, $dateAjd){\r\n    $query = \"SELECT * FROM formation\r\n         WHERE DateFormation > :dateAjd\r\n         ORDER BY DateFormation;\";\r\n\r\n    $statement = $bdd->prepare($query);\r\n    $statement->bindParam(':dateAjd', $dateAjd);\r\n\r\n    $liste = null;\r\n    if ($statement->execute()) {\r\n        $liste = $statement->fetchAll(PDO::FETCH_OBJ);\r\n        //On finie par fermer la ressource\r\n        $statement->closeCursor();\r\n    }\r\n    return $liste;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/Fonctions.php b/pages/Fonctions.php
+--- a/pages/Fonctions.php	(revision 27e146b4c8a41ddda564c2da1a7e6213c042dcd3)
++++ b/pages/Fonctions.php	(date 1665577558395)
+@@ -63,10 +63,11 @@
+         //On finie par fermer la ressource
+         $statement->closeCursor();
+     }
++    var_dump($liste);
+     if (isset($liste) and $liste > 0) {
+-        return false;
+-    }else{
+         return true;
++    }else{
++        return false;
+     }
+ }
+ 
+@@ -79,8 +80,23 @@
+ }
+ 
+ function redirectFormulaire(PDO $bdd, $idClient){
+-    if(checkfirstConnection($bdd,$idClient)){
+-        header('Location:'. getPath().'/pages/FormualaireSalarie.php');
++    var_dump(basename($_SERVER['PHP_SELF']));
++    if(blackListPage(basename($_SERVER['PHP_SELF'])) && checkfirstConnection($bdd,$idClient)){
++        header('Location:'. getPath().'pages/FormualaireSalarie.php');
++    }
++}
++
++function blackListPage($NomPage){
++    switch($NomPage){
++        case "FormulaireSalarie":
++            return true;
++            break;
++        case "MonCompte" :
++            return true;
++            break;
++        default:
++            return false;
++            break;
+     }
+ }
+ 
