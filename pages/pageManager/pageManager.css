@@ -1,0 +1,37 @@
+.liste-salarie{
+    list-style: none;
+}
+
+ul{
+    list-style: square;
+}
+
+.salarie{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+.materiel {
+    display: flex;
+}
+
+.materiel li {
+    padding: 15px 0px 15px 0px ;
+    font-size: 16px;
+    width:100px;
+}
+
+.materiel button{
+    background-color: #440670;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

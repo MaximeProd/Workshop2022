@@ -144,3 +144,36 @@ function displayChambre($chambres)
 function getSalarie(PDO $bdd, $Email){
     return getListe($bdd,'salarie',Array("email" => $Email),Array());
 }
+
+function getSalaries(PDO $bdd, Array $args = []) {
+    $query = "SELECT * FROM salarie WHERE IdEquipe = 1";
+
+    $statement = $bdd->prepare($query);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchAll(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+}
+
+function getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {
+    $query = "SELECT * FROM salarie, salariepossession, type_materiel 
+         WHERE salariepossession.IdSalarie = salarie.IdSalarie 
+           and salariepossession.IdType = type_materiel.IdType
+           and salarie.IdSalarie = :idSalarie
+         ORDER BY salariepossession.Qualite;";
+
+    $statement = $bdd->prepare($query);
+    $statement->bindParam(':idSalarie', $idSalarie);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchAll(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+}
