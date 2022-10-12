@@ -1,7 +1,10 @@
 <?php
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . '\Fonctions.php';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77ead11 (correction liens CSS)
 session_start();
 
 $Compte = 'Se connecter/Inscription';
@@ -48,8 +51,13 @@ echo '
   <head>
     <meta charset="utf-8">
     <title>Ergonobro</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/Header.css">
+=======
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/Header.css">
+>>>>>>> 77ead11 (correction liens CSS)
     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
     <!--
     font-family: "Sniglet", cursive; →Titre
