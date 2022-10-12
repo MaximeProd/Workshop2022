@@ -14,7 +14,9 @@ var_dump(getPath());
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: darkcyan;
+            background: darkslategrey;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
         }
         .header {
@@ -101,11 +103,11 @@ var_dump(getPath());
     <form method="post" id="clavier">
         <fieldset>
             <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="180" onclick=onmousemove() </label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="130"></label>
         </fieldset>
     </form>
     <form method="post" id="souris">
@@ -124,31 +126,33 @@ var_dump(getPath());
 </center>
 <footer>
     <center>
-        <button class= "send" id= "send" type="submit" onclick=myFunction()>Envoyez vos informations</button>
+        <button class= "send" id= "Button1" type="submit" onclick=myFunction()>Envoyez vos informations</button>
 
 
-        <div class="alert success">
-            <span class="closebtn">&times;</span>
-            <strong>Informations bien envoyé</strong>
-        </div>
 
 
 </center>
 </footer>
 
-    <script>
+
+</body>
+<script>
     var close = document.getElementsByClassName("closebtn");
     var i;
 
     for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
     }
-    }
-    </script>
+    <script type="text/javascript">
+        $(function () {
+        $("#Button1").on('click', function () {
+            $("#Button2").show();
+        });
+    });
+</script>
 
-
-</body>
 </html>
