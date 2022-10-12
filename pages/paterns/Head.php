@@ -1,5 +1,6 @@
 <?php
-require_once 'Fonctions.php';
+$directory = $_SERVER["DOCUMENT_ROOT"];
+require_once $directory . '/pages/Fonctions.php';
 session_start();
 
 $Compte = 'Se connecter/Inscription';

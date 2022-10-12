@@ -1,7 +1,7 @@
 <?php
-require_once '../Fonctions.php';
+require_once '../paterns/Head.php';
 $bdd = getDataBase();
-$manager = getListe($bdd,'salarie',Array("IdSalarie" => $_SESSION["idClient"]);
+$manager = getListe($bdd,'salarie',Array("IdSalarie" => $_SESSION['idClient']));
 $salaries = getSalaries($bdd);
 
 ?>
