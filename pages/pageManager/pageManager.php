@@ -1,5 +1,7 @@
 <?php
-require_once '../paterns/Head.php';
+include ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR ."config.php";
+
+require_once HEAD_FILE;
 $bdd = getDataBase();
 $manager = getFirst($bdd,'salarie', Array("IdSalarie" => $_SESSION['idClient']));
 $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));

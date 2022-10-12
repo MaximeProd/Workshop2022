@@ -1,9 +1,6 @@
 <?php
-$directory = $_SERVER["DOCUMENT_ROOT"];
-if(!gethostname() == 'DESKTOP-NS2VGVV' and !gethostname() == 'DESKTOP-CQRJMIK')
-    $directory = $directory . '/Workshop2022';
 
-require_once $directory . '/pages/Fonctions.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . '\Fonctions.php';
 session_start();
 
 $Compte = 'Se connecter/Inscription';
@@ -31,8 +28,8 @@ echo '
   <head>
     <meta charset="utf-8">
     <title>Ergonobro</title>
-    <link rel="stylesheet" href="' . $directory . '/css/index.css">
-    <link rel="stylesheet" href="' . $directory . '/css/header.css">
+    <link rel="stylesheet" href="' . CSS_FOLDER  . '/index.css">
+    <link rel="stylesheet" href="' . CSS_FOLDER  . '/Header.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
     <!--
     font-family: "Sniglet", cursive; →Titre
