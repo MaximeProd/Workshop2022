@@ -8,20 +8,39 @@ session_start();
 
 $Compte = 'Se connecter/Inscription';
 $lien = "LoginRegister.php";
+
+$admin = null;
+$pageAdmin = '';
+
 if (isset($_SESSION['idClient'])){
     $idClient = $_SESSION['idClient'];
     $Compte = 'Mon Compte';
     $lien = "MonCompte.php";
     $bdd = getDatabase();
-    redirectFormulaire($bdd, $idClient);
-}
 
-$admin = null;
-$pageAdmin = '';
-if (isset($_SESSION['admin'])){
-    $admin = $_SESSION['admin'];
-    if ($admin == "1"){
-    $pageAdmin = '<a class= "manager" href="#contact">Gérer les salariés</a>';
+
+
+    if (isset($_SESSION['admin']))
+        $admin = $_SESSION['admin'];
+
+    if(checkfirstConnection($bdd,$idClient)){
+        $pageAdmin = '
+            <a class= "salarié" href="FormulaireSalarie">Formulaire</a>
+            ';
+    }
+    else if ($admin == "1") {
+        $pageAdmin = '        
+        <a class= "salarié" href="#about">Page Salarié</a>
+        <a class= "salarié" href="#about">Formation</a>
+        <a href="EspacePersonnel.php">EspacePersonnel</a>
+        <a class= "manager" href="#contact">Gérer les salariés</a>';
+    }
+    else {
+        $pageAdmin = '
+            <a class= "salarié" href="#about">Page Salarié</a>
+            <a class= "salarié" href="#about">Formation</a>
+            <a href="EspacePersonnel.php">EspacePersonnel</a>
+            ';
     }
 }
 
@@ -45,9 +64,7 @@ echo '
     <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
-        <a href="EspacePersonnel.php">EspacePersonnel</a>
+
         '.$pageAdmin.'
         <a  class="active" href="'.$lien.'">'.$Compte.'</a>
     </div>

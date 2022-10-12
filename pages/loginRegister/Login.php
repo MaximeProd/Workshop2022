@@ -35,7 +35,10 @@ if(isset($bdd)){
 }
 
 if (isset($_SESSION['idClient'])){
-    header('Location: ../EspacePersonnel.php');
+    if(checkfirstConnection($bdd,$idClient))
+        header('Location: ../FormulaireSalarie.php');
+    else
+        header('Location: ../EspacePersonnel.php');
 } else {
     header('Location: ../LoginRegister.php');
 }

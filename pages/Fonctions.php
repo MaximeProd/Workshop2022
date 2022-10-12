@@ -63,7 +63,7 @@ function checkfirstConnection(PDO $bdd, $idClient) {
         //On finie par fermer la ressource
         $statement->closeCursor();
     }
-    var_dump($liste);
+
     if (isset($liste) and $liste > 0) {
         return true;
     }else{
@@ -77,27 +77,6 @@ function getPath(){
         return $directory;
     else
         return $directory."/Workshop2022/";
-}
-
-function redirectFormulaire(PDO $bdd, $idClient){
-    var_dump(basename($_SERVER['PHP_SELF']));
-    if(blackListPage(basename($_SERVER['PHP_SELF'])) && checkfirstConnection($bdd,$idClient)){
-        header('Location:'. getPath().'pages/FormualaireSalarie.php');
-    }
-}
-
-function blackListPage($NomPage){
-    switch($NomPage){
-        case "FormulaireSalarie":
-            return true;
-            break;
-        case "MonCompte" :
-            return true;
-            break;
-        default:
-            return false;
-            break;
-    }
 }
 
 function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
