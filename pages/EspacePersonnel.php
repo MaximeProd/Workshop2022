@@ -1,5 +1,5 @@
 <?php
-require 'paterns/Head.php';
+require_once "paterns/Head.php";
 
 ?>
     <html lang="fr">

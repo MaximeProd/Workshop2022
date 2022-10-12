@@ -83,11 +83,11 @@ require_once "paterns/Head.php";
     <form method="post" id="chaise">
         <fieldset>
             <legend class="chaise">A quoi votre chaise ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/image/chaise/1.png"  width="200" height="180" onclick="getSelection() " ></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/chaise/1.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180" onclick="getSelection() " ></label
+            <label><input type="radio" name="radio"><img src="/image/chaise/2.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/chaise/3.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/chaise/4.png" data-picture_id="'.$record['picture_id'].' "width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/chaise/5.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
         </fieldset>
     </form>
     <form method="post" id="casque">
@@ -152,6 +152,13 @@ require_once "paterns/Head.php";
         $("#Button1").on('click', function () {
             $("#Button2").show();
         });
+    });
+        $("img[data-picture_id]").click(function(e){
+
+
+        $("input[name='selected_image']").valueOf($(this).data('picture_id'));
+
+
     });
 </script>
 
