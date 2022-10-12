@@ -13,6 +13,7 @@ if(isset($bdd)){
         var_dump($liste);
         if(!empty($liste)){
             if(count($liste)==1 && $password == $liste[0]->Mdp){
+                var_dump($liste[0]);
                 $idClient = $liste[0]->IdSalarie;
                 $_SESSION['idClient'] = $idClient;
                 $_SESSION['admin'] = $liste[0]->EstManager;
@@ -34,9 +35,9 @@ if(isset($bdd)){
 }
 
 if (isset($_SESSION['idClient'])){
-    header('Location: ../EspacePersonnel.php');
+    //header('Location: ../EspacePersonnel.php');
 } else {
-    header('Location: ../LoginRegister.php');
+    //header('Location: ../LoginRegister.php');
 }
 //TODO AJOUTER UNE PAGE COMPTE
 
