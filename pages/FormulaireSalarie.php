@@ -14,6 +14,8 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: darkcyan;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
         }
         .header {
@@ -77,9 +79,9 @@
     <a href="#default" class="logo">Ergonobro</a>
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
-        <a class= "manager" href="#contact">Page Manager</a>
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
+        <a class= "manager" href="#manager">Page Manager</a>
+        <a class= "salarié" href="#salarie">Page Salarié</a>
+        <a class= "salarié" href="#formation">Formation</a>
     </div>
 </div>
 <body>
@@ -110,11 +112,11 @@
     <form method="post" id="clavier">
         <fieldset>
             <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="180" onclick=onmousemove() </label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="130"></label>
         </fieldset>
     </form>
     <form method="post" id="souris">
