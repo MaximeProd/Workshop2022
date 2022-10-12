@@ -3,7 +3,6 @@ require_once '../paterns/Head.php';
 $bdd = getDataBase();
 $manager = getFirst($bdd,'salarie', Array("IdSalarie" => $_SESSION['idClient']));
 $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
-$formations = getFutureFormation($bdd, date('d-m-y h:i:s'));
 
 ?>
 
@@ -11,10 +10,10 @@ $formations = getFutureFormation($bdd, date('d-m-y h:i:s'));
     <link rel="stylesheet" href="pageManager.css">
 </head>
 
+<h1>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h1>
+
 <div class="pageManager">
     <div class="liste-salaries">
-        <h1>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h1>
-
         <h2>Liste de votre équipe :</h2>
 
         <ul class="liste-salarie">
@@ -25,25 +24,24 @@ $formations = getFutureFormation($bdd, date('d-m-y h:i:s'));
                 $possessions = getSalariePossession($bdd, $s->IdSalarie);
 
                 foreach ($possessions as $possession){
-                    $shouldDisplayButton = false;
                     $color = 'black';
+                    $shouldDisplayButton = true;
 
                     switch ($possession->Qualite){
                         case "1":
                             $color = "red";
-                            $shouldDisplayButton = true;
                             break;
                         case "2":
                             $color = "#bf5c00";
-                            $shouldDisplayButton = true;
                             break;
                         case "3":
                             $color = "#a9bf00";
-                            $shouldDisplayButton = true;
                             break;
                         case "4":
                             $color = "#00bf30";
-                            $shouldDisplayButton = true;
+                            break;
+                        default:
+                            $shouldDisplayButton = false;
                             break;
                     }
 
@@ -79,17 +77,30 @@ $formations = getFutureFormation($bdd, date('d-m-y h:i:s'));
             }
             ?>
         </ul>
-
     </div>
 
     <div class="liste-formations">
+
+        <h2>Vos formations :</h2>
         <ul>
             <?php
+            $formations = getFutureFormation($bdd, date('d-m-y h:i:s'), $manager->IdEquipe, false);
             foreach ($formations as $formation){
                 $dateFormation = new DateTime($formation->DateFormation);
-                echo "<li> ". $formation->SujetFormation . " - le " . $dateFormation->format('d/m/Y') ." à " . $dateFormation->format('H:i') . "
-                        <button><a href=''>S'inscrire</a> </button>
-                      </li>";
+                echo "<li> ". $formation->SujetFormation . " - le " . $dateFormation->format('d/m/Y') ." à " . $dateFormation->format('H:i');
+            }
+
+            ?>
+        </ul>
+
+        <h2>Liste des formations disponibles :</h2>
+        <ul>
+            <?php
+            $formations = getFutureFormation($bdd, date('d-m-y h:i:s'), $manager->IdEquipe, true);
+            foreach ($formations as $formation){
+                $dateFormation = new DateTime($formation->DateFormation);
+                echo "<li> ". $formation->SujetFormation . " - le " . $dateFormation->format('d/m/Y') ." à " . $dateFormation->format('H:i') .
+                    "<button><a href='addFormation.php?idEquipe=" . $manager->IdEquipe . "&idFormation=" . $formation->IdFormation . "'>S'inscrire</a> </button></li>";
 
             }
             ?>
@@ -97,3 +108,6 @@ $formations = getFutureFormation($bdd, date('d-m-y h:i:s'));
 
     </div>
 </div>
+
+<?php
+require_once "../paterns/Foot.php";

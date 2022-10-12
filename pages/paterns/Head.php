@@ -1,9 +1,9 @@
 <?php
 $directory = $_SERVER["DOCUMENT_ROOT"];
-if(gethostname() == 'DESKTOP-NS2VGVV' or 'DESKTOP-CQRJMIK')
-    require_once $directory . '/pages/Fonctions.php';
-else
-    require_once $directory . '/Workshop2022/pages/Fonctions.php';
+if(!gethostname() == 'DESKTOP-NS2VGVV' and !gethostname() == 'DESKTOP-CQRJMIK')
+    $directory = $directory . '/Workshop2022';
+
+require_once $directory . '/pages/Fonctions.php';
 session_start();
 
 $Compte = 'Se connecter/Inscription';
@@ -30,9 +30,9 @@ echo '
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Hotel Neptune</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <title>Ergonobro</title>
+    <link rel="stylesheet" href="' . $directory . '/css/index.css">
+    <link rel="stylesheet" href="' . $directory . '/css/header.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
     <!--
     font-family: "Sniglet", cursive; →Titre
