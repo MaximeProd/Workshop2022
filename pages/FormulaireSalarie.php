@@ -1,7 +1,13 @@
 <?php
 require_once "paterns/Head.php";
 
-?>
+//getListe($bdd, );
+
+$record['picture_id'] = "1";
+
+
+
+echo '
 <html lang="fr">
 <link rel="stylesheet" href="../css/FormulaireSalarie.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,86 +86,54 @@ require_once "paterns/Head.php";
 <br>
 <br>
 <center>
-    <form method="post" id="chaise">
+<form method="post" id="mainform">
+    <div method="post" id="chaise" action="formulaireManager/FormulaireSave.php">
         <fieldset>
             <legend class="chaise">A quoi votre chaise ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/image/chaise/1.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180" onclick="getSelection() " ></label
-            <label><input type="radio" name="radio"><img src="/image/chaise/2.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/3.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/4.png" data-picture_id="'.$record['picture_id'].' "width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/5.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/1.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180" onclick="getSelection() " ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/2.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/3.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/4.png" data-picture_id="'.$record['picture_id'].' "width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/5.png" data-picture_id="'.$record['picture_id'].'" width="200" height="180"></label>
         </fieldset>
-    </form>
-    <form method="post" id="casque">
+    </div>
+    <div method="post" id="casque">
         <fieldset>
             <legend class="casque">A quoi votre casque ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/image/casque/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/2.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/3.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/4.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/5.png"  width="200" height="180"></label>
         </fieldset>
-    </form>
-    <form method="post" id="clavier">
+    </div>
+    <div method="post" id="clavier">
         <fieldset>
             <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/2.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/3.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/4.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/5.png"  width="200" height="130"></label>
         </fieldset>
-    </form>
-    <form method="post" id="souris">
+    </div>
+    <div method="post" id="souris">
         <fieldset>
             <legend class="souris">A quoi votre souris ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/image/souris/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/2.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/3.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/4.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/5.png"  width="200" height="180"></label>
         </fieldset>
-
-
-
-
-</center>
-
-    <center>
-        <button class= "send" id= "Button1" type="submit" onclick=myFunction()>Envoyez vos informations</button>
-
-
-
-
-</center>
+    </div>
+    <button class="send" id= "Button1" type="submit" >Envoyez vos informations</button>
+</form>
 
 
 
 </body>
-<script>
-    var close = document.getElementsByClassName("closebtn");
-    var i;
+';
 
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function(){
-            var div = this.parentElement;
-            div.style.opacity = "0";
-            setTimeout(function(){ div.style.display = "none"; }, 600);
-        }
-    }
-    <script type="text/javascript">
-        $(function () {
-        $("#Button1").on('click', function () {
-            $("#Button2").show();
-        });
-    });
-        $("img[data-picture_id]").click(function(e){
+require_once "paterns/Foot.php";
 
-
-        $("input[name='selected_image']").valueOf($(this).data('picture_id'));
-
-
-    });
-</script>
-
-</html>

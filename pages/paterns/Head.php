@@ -61,7 +61,7 @@ echo '
   <body>
     <div class="header">
     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
-    <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
+    <a href="#default" class="logo"><img src="/Workshop2022/image/Ergonobro.png" width="25px" height="25px" >Ergonobro</a>
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
 

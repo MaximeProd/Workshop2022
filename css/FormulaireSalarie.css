@@ -80,7 +80,7 @@ body {
     color: black;
 }
 .chaise{
-    color: rgb(0,227,227);
+    color: black;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -89,7 +89,7 @@ body {
     font-weight: bold;
 }
 .casque{
-    color: rgb(0,227,227);
+    color: black;
     padding: 12px;
     padding: 12px;
     text-decoration: none;
@@ -99,7 +99,7 @@ body {
     font-weight: bold;
 }
 .clavier{
-    color: rgb(0,227,227);
+    color: black;
     padding: 12px;
     padding: 12px;
     text-decoration: none;
@@ -109,7 +109,7 @@ body {
     font-weight: bold;
 }
 .souris{
-    color: rgb(0,227,227);
+    color: black;
     padding: 12px;
     padding: 12px;
     text-decoration: none;
@@ -128,7 +128,7 @@ font-weight: 600;
 border-radius: 4px;
 font-size: 13px;
 height: 30px;
-background-color: #4C0099;
+background-color: #64a1a1;
 color: white;
 padding: 0 20px;
 }
@@ -141,4 +141,9 @@ fieldset {
   }
 img{
     margin-right:100px;
+}
+label img{
+    width: 8%;
+    height: 8%;
+
 }
