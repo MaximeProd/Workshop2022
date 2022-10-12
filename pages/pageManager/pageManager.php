@@ -12,16 +12,16 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
     <link rel="stylesheet" href="pageManager.css">
 </head>
 
-<h1>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h1>
+<h2>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h2>
 
 <div class="pageManager">
     <div class="liste-salaries">
-        <h2>Liste de votre équipe :</h2>
+        <h3>Liste de votre équipe :</h3>
 
         <ul class="liste-salarie">
             <?php
             foreach ($salaries as $s){
-                echo '<li class="salarie">' . $s->PrenomSalarie . ' ' . $s->NomSalarie;
+                echo '<li class="salarie"><h4>' . $s->PrenomSalarie . ' ' . $s->NomSalarie . '</h4>';
 
                 $possessions = getSalariePossession($bdd, $s->IdSalarie);
 
@@ -83,7 +83,7 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
 
     <div class="liste-formations">
 
-        <h2>Vos formations :</h2>
+        <h3>Vos formations :</h3>
         <ul>
             <?php
             $formations = getFutureFormation($bdd, date('d-m-y h:i:s'), $manager->IdEquipe, false);
