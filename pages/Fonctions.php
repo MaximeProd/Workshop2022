@@ -248,3 +248,22 @@ function updateLine(PDO $bdd, $oldType,$idSalarie,$Qualite) {
     }
     return $liste;
 }
+
+function getCommandesNonValideeBySalarie(PDO $bdd, $idSalarie){
+    $query = "select * from commande, materiel_ergo 
+                where IdSalarie = :idSalarie 
+                  and EstValideeParSalarie = 0 
+                  and commande.IdMateriel = materiel_ergo.IdMateriel";
+
+    $statement = $bdd->prepare($query);
+    $statement->bindParam(':idSalarie', $idSalarie);
+
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetchAll(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+
+}

@@ -1,5 +1,6 @@
 .pageManager{
     display:flex ;
+    color: black;
 }
 
 .liste-salaries {
@@ -53,3 +54,4 @@ a {
     text-decoration: none;
     color: white;
 }
+
