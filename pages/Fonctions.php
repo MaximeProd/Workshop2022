@@ -85,8 +85,8 @@ function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
     foreach ($args as $key => $arg) {
         $query = "{$query} AND {$key} LIKE :p_{$key} ";
     }
-    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)
 
+    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)
     $statement = $bdd->prepare($query);
     foreach ($args as $key => $arg) {
 
@@ -108,6 +108,37 @@ function getListe(PDO $bdd,$askListe,Array $args = [], $search = False) {
     return $liste;
 }
 
+function getFirst(PDO $bdd, $table ,Array $args = [], $search = False) {
+    $query = "SELECT * FROM {$table} WHERE 1 ";
+
+    //Etape 1 : On génère la requête sql avec les arguments demandés :
+    foreach ($args as $key => $arg) {
+        $query = "{$query} AND {$key} LIKE :p_{$key} ";
+    }
+    $query = "{$query} LIMIT 1";
+
+    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)
+    $statement = $bdd->prepare($query);
+    foreach ($args as $key => $arg) {
+
+        if ($search) {
+            var_dump($search);
+            $arg = $arg . '%';
+        }
+        $para = ':p_'.$key;
+        $statement->bindValue($para, $arg);
+    }
+
+    //On réalise la requète et on renvoie le résultat
+    $liste = null;
+    if ($statement->execute()) {
+        $liste = $statement->fetch(PDO::FETCH_OBJ);
+        //On finie par fermer la ressource
+        $statement->closeCursor();
+    }
+    return $liste;
+}
+
 function getPost($askGet){
     if (isset($_POST[$askGet])) {
         return htmlspecialchars($_POST[$askGet]);
@@ -116,39 +147,19 @@ function getPost($askGet){
     }
 }
 
-function displayChambre($chambres)
-{
-    if ($chambres) {
-        foreach ($chambres as $chambre) {
-            // Afficher
-            echo '
-        <div class="chambre">
-          <img src="images/neptune.png">
-          <div class="division">
-            <h2>Chambre ' . $chambre->numero . '</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non  </p>
-            <form action="PageReservation.php" method="POST">
-                <input type="hidden" name="numChambre" value="'.$chambre->numero.'">
-                <input type="submit" value="Voir les réservations"/>
-            </form>
-          </div>
-        </div>
-        ';
-        }
-    }
-    else {
-            echo "<p>Aucun résulat</p>";
-        }
-}
-
 function getSalarie(PDO $bdd, $Email){
     return getListe($bdd,'salarie',Array("email" => $Email),Array());
 }
 
-function getSalaries(PDO $bdd, Array $args = []) {
-    $query = "SELECT * FROM salarie WHERE IdEquipe = 1";
+function getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {
+    $query = "SELECT * FROM salarie, salariepossession, type_materiel 
+         WHERE salariepossession.IdSalarie = salarie.IdSalarie 
+           and salariepossession.IdType = type_materiel.IdType
+           and salarie.IdSalarie = :idSalarie
+         ORDER BY salariepossession.Qualite;";
 
     $statement = $bdd->prepare($query);
+    $statement->bindParam(':idSalarie', $idSalarie);
 
     $liste = null;
     if ($statement->execute()) {
@@ -159,7 +170,7 @@ function getSalaries(PDO $bdd, Array $args = []) {
     return $liste;
 }
 
-function getSalariePossession(PDO $bdd, $idSalarie, Array $args = []) {
+function getFutureFormation(PDO $bdd, $dateAjd){
     $query = "SELECT * FROM salarie, salariepossession, type_materiel 
          WHERE salariepossession.IdSalarie = salarie.IdSalarie 
            and salariepossession.IdType = type_materiel.IdType
