@@ -42,11 +42,20 @@ echo '
   <body>
     <div class="header">
     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
-    <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
+<<<<<<<<< Temporary merge branch 1
+    <a href="#default" class="logo">Ergonobro</a>
     <div class="header-right">        
         <a class="salarie" href="PageSalarie.php">Page Salarié</a>
         <a class="formulaire" href="FormulaireSalarie.php">Formulaire</a>
         <a class="formation" href="Formation.php">Formation</a>
+=========
+    <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
+    <div class="header-right">
+        <a class="active" href="#home">Accueil</a>
+        
+        <a class= "salarié" href="#about">Page Salarié</a>
+        <a class= "salarié" href="#about">Formation</a>
+>>>>>>>>> Temporary merge branch 2
         <a href="EspacePersonnel.php">EspacePersonnel</a>
         '.$pageAdmin.'
         <a  class="active" href="'.$lien.'">'.$Compte.'</a>
