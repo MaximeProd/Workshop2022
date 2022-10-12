@@ -96,7 +96,7 @@ require_once "paterns/Head.php";
             <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/2.png"  ></label>
             <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/3.png"  ></label>
             <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/4.png"  ></label>
-            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/5.png"  w></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/5.png"  ></label>
         </fieldset>
     </form>
     <form method="post" id="clavier">
