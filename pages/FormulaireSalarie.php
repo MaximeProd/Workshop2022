@@ -1,6 +1,5 @@
 <?php
 require_once "paterns/Head.php";
-var_dump(getPath());
 ?>
 <html lang="fr">
 <link rel="stylesheet" href="../css/FormulaireSalarie.css">
@@ -83,56 +82,47 @@ var_dump(getPath());
     <form method="post" id="chaise">
         <fieldset>
             <legend class="chaise">A quoi votre chaise ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="<?=getPath();?>image/chaise/1.png"  width="200" height="180" onclick="getSelection() " ></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/chaise/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/1.png"  onclick="getSelection() " ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/2.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/3.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/4.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/chaise/5.png"  ></label>
         </fieldset>
     </form>
     <form method="post" id="casque">
         <fieldset>
             <legend class="casque">A quoi votre casque ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/casque/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/image/casque/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/casque/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/1.png"  onclick="getSelection() " </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/2.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/3.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/4.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/casque/5.png"  w></label>
         </fieldset>
     </form>
     <form method="post" id="clavier">
-        <fieldset>
+        <fieldset class="clavier">
             <legend class="clavier">A quoi votre clavier ressemble-t-il?</legend>
-            <label><input type="radio" name="radio"><img src="/image/clavier/1.png"  width="200" height="130" onclick=onmousemove() </label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/2.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/3.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/4.png"  width="200" height="130"></label>
-            <label><input type="radio" name="radio"><img src="/image/clavier/5.png"  width="200" height="130"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/1.png"  onclick=onmousemove()> </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/2.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/3.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/4.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/clavier/5.png"  ></label>
         </fieldset>
     </form>
     <form method="post" id="souris">
         <fieldset>
             <legend class="souris">A quoi votre souris ressemble-t-elle?</legend>
-            <label><input type="radio" name="radio"><img src="/image/souris/1.png"  width="200" height="180" onclick="getSelection() " </label>
-            <label><input type="radio" name="radio"><img src="/image/souris/2.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/3.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/4.png"  width="200" height="180"></label>
-            <label><input type="radio" name="radio"><img src="/image/souris/5.png"  width="200" height="180"></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/1.png"   onclick="getSelection() " </label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/2.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/3.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/4.png"  ></label>
+            <label><input type="radio" name="radio"><img src="/Workshop2022/image/souris/5.png"  ></label>
         </fieldset>
 
-
-
-
-</center>
-<footer>
-    <center>
         <button class= "send" id= "Button1" type="submit" onclick=myFunction()>Envoyez vos informations</button>
 
-
-
-
+    </form>
 </center>
-</footer>
 
 
 </body>
@@ -155,4 +145,6 @@ var_dump(getPath());
     });
 </script>
 
-</html>
+<?php
+
+require 'paterns/Foot.php';

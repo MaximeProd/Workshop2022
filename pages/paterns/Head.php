@@ -30,7 +30,7 @@ echo '
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Hotel Neptune</title>
+    <title>Ergonobro</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/header.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@ echo '
   <body>
     <div class="header">
     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
-    <a href="#default" class="logo">Ergonobro</a>
+    <a href="#default" class="logo"><img src="images/neptune.png" width="25px" height="25px" >Ergonobro</a>
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
         
