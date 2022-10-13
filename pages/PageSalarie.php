@@ -3,6 +3,7 @@ require_once "paterns/Head.php";
 ?>
 <head>
     <link rel="stylesheet" href="../css/PageSalarie.css">
+
 </head>
 
 <body>
@@ -36,7 +37,7 @@ $casque = getFirst($bdd, "salariepossession", Array("IdSalarie" => $_SESSION['id
 
     <button id="modif"><a href="FormulaireSalarie.php">Modifier</a></button>
 </div>
-
+<br>
 <div class="commandes">
     Les commandes vous concernant à valider :
     <ul>

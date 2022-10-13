@@ -12,7 +12,7 @@ $pageAdmin = '';
 if (isset($_SESSION['idClient'])){
     $idClient = $_SESSION['idClient'];
     $Compte = 'Mon Compte';
-    $lien = "MonCompte.php";
+    $lien = "/Workshop2022/pages/MonCompte.php";
     $bdd = getDatabase();
 
 

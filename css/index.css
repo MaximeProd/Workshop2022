@@ -11,11 +11,11 @@
 */
 /*MAIN */
 main{
-  background: linear-gradient(#b5e9eb, #98d1d4) ;
+  background: linear-gradient(#c5edea, #6ca8a4) ;
   height:auto;
   width:100%;
   font-size: 1vw;
-  color:#FFF;
+  color: black;
   padding-bottom: 1vw;
   min-height: 100%;
 }
@@ -28,10 +28,12 @@ header img{
 html, body {
   height: 100%;
   margin: 0; padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   display : table;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .haut{
@@ -41,7 +43,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(#b5e9eb, #98d1d4) ;
+  background: linear-gradient(#c5edea, #a5ccc9) ;
 }
 
 h1{
@@ -58,7 +60,7 @@ h2{
   overflow: hidden;
   position: sticky;
   top:0;
-  background: linear-gradient(#b5e9eb, #98d1d4) ;
+  background: linear-gradient(#c5edea, #a5ccc9) ;
   height: 2vw;
   font-family: 'Acme', sans-serif;
   display: flex;

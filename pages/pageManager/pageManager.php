@@ -13,6 +13,7 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
 </head>
 
 <h2>Bienvenue <?= $manager->PrenomSalarie . " " . $manager->NomSalarie; ?> </h2>
+<br>
 
 <div class="pageManager">
     <div class="liste-salaries">
@@ -83,7 +84,8 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
 
     <div class="liste-formations">
 
-        <h3>Vos formations :</h3>
+        <h2>Vos formations :</h2>
+        <br>
         <ul>
             <?php
             $formations = getFutureFormation($bdd, date('d-m-y h:i:s'), $manager->IdEquipe, false);
@@ -94,8 +96,10 @@ $salaries = getListe($bdd, "salarie", Array("IdEquipe" => $manager->IdEquipe));
 
             ?>
         </ul>
-
+        <br>
+        <br>
         <h2>Liste des formations disponibles :</h2>
+        <br>
         <ul>
             <?php
             $formations = getFutureFormation($bdd, date('d-m-y h:i:s'), $manager->IdEquipe, true);
