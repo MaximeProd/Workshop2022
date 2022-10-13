@@ -1,7 +1,6 @@
 <?php
 session_start();
 require '../Fonctions.php';
-var_dump($_POST);
 $bdd = getDataBase();
 
 if (isset($bdd)){
@@ -18,7 +17,6 @@ if (isset($bdd)){
                 updateLine($bdd,$key,$_SESSION['idClient'],$value);
         }
     }
-    var_dump(checkfirstConnection($bdd,$_SESSION["idClient"]));
     if(checkfirstConnection($bdd,$_SESSION["idClient"]))
         header('Location: ../FormulaireSalarie.php');
     else{

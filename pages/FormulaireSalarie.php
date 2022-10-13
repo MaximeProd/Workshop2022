@@ -130,7 +130,7 @@ echo '
             <label><input type="radio" name="2" value="5" '.(($poss4 != false)?(($poss4->Qualite == 5)?"checked=\"checked\"":""):"").'><img src="/Workshop2022/image/souris/5.png"  width="200" height="180"></label>
         </fieldset>
     </div>
-    <input class="send" type="submit" >Envoyez vos informations</input>
+    <input class="send" type="submit" value="Envoyez vos informations"></input>
 </form>
 
 
