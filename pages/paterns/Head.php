@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..\..' .'\config.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . '\Fonctions.php';
 session_start();
 
@@ -22,21 +22,17 @@ if (isset($_SESSION['idClient'])){
 
     if(checkfirstConnection($bdd,$idClient)){
         $pageAdmin = '
-            <a class= "salarié" href="FormulaireSalarie">Formulaire</a>
+            <a class= "salarié" href="/Workshop2022/pages/PageSalarie.php">Formulaire</a>
             ';
     }
     else if ($admin == "1") {
         $pageAdmin = '        
-        <a class= "salarié" href="#about">Page Salarié</a>
-        <a class= "salarié" href="#about">Formation</a>
-        <a href="EspacePersonnel.php">EspacePersonnel</a>
-        <a class= "manager" href="#contact">Gérer les salariés</a>';
+        <a                  href="/Workshop2022/pages/PageSalarie.php">EspacePersonnel</a>
+        <a class= "manager" href="/Workshop2022/pages/pageManager/pageManager.php">Gérer les salariés</a>';
     }
     else {
         $pageAdmin = '
-            <a class= "salarié" href="#about">Page Salarié</a>
-            <a class= "salarié" href="#about">Formation</a>
-            <a href="EspacePersonnel.php">EspacePersonnel</a>
+            <a href="/Workshop2022/pages/PageSalarie.php">EspacePersonnel</a>
             ';
     }
 }
@@ -47,8 +43,8 @@ echo '
   <head>
     <meta charset="utf-8">
     <title>Ergonobro</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/Workshop2022/css/index.css">
+    <link rel="stylesheet" href="/Workshop2022/css/Header.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Sniglet&display=swap" rel="stylesheet">
     <!--
     font-family: "Sniglet", cursive; →Titre
@@ -58,7 +54,7 @@ echo '
   <body>
     <div class="header">
     <i class=\'fas fa-air-freshener\' style=\'font-size:48px;color:red\'></i>
-    <a href="#default" class="logo"><img src="/image/Ergonobro.png" width="25px" height="25px" >Ergonobro</a>
+    <a href="#default" class="logo"><img src="/Workshop2022/image/Ergonobro.png" width="25px" height="25px" >Ergonobro</a>
     <div class="header-right">
         <a class="active" href="#home">Accueil</a>
 

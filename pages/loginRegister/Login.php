@@ -10,10 +10,10 @@ if(isset($bdd)){
     if (isset($listPost['mdp']) AND isset($listPost['email'])){
         $password = htmlspecialchars($_POST['mdp']);
         $liste = getSalarie($bdd, $listPost['email']);
-        var_dump($liste);
+        //var_dump($liste);
         if(!empty($liste)){
             if(count($liste)==1 && $password == $liste[0]->Mdp){
-                var_dump($liste[0]);
+                //var_dump($liste[0]);
                 $idClient = $liste[0]->IdSalarie;
                 $_SESSION['idClient'] = $idClient;
                 $_SESSION['admin'] = $liste[0]->EstManager;
@@ -35,10 +35,11 @@ if(isset($bdd)){
 }
 
 if (isset($_SESSION['idClient'])){
+    var_dump(checkfirstConnection($bdd,$idClient));
     if(checkfirstConnection($bdd,$idClient))
         header('Location: ../FormulaireSalarie.php');
     else
-        header('Location: ../EspacePersonnel.php');
+        header('Location: ../PageSalarie.php');
 } else {
     header('Location: ../LoginRegister.php');
 }

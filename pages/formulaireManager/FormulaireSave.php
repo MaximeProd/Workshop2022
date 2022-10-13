@@ -10,15 +10,22 @@ if (isset($bdd)){
     if (isset($_POST)){
         foreach ($_POST as $key => $value){
             $poss = getFirst($bdd, 'salariepossession', ["IdType"=>$key, "IdSalarie"=>$_SESSION['idClient']],'*');
-            if(!isset($poss)){
+            if($poss == false){
                 $args = array("IdType"=>$key, "IdSalarie"=>$_SESSION['idClient'],"Qualite"=>$value);
-                insertListe($bdd,'salariepossession',$args);
+                insertLineQuestionnaire($bdd,$key,$_SESSION['idClient'],$value);
             }
             else
                 updateLine($bdd,$key,$_SESSION['idClient'],$value);
         }
     }
-    header('Location: ../FormulaireSalarie.php');
+    var_dump(checkfirstConnection($bdd,$_SESSION["idClient"]));
+    if(checkfirstConnection($bdd,$_SESSION["idClient"]))
+        header('Location: ../FormulaireSalarie.php');
+    else{
+        header('Location: ../PageSalarie.php');
+        $_SESSION["erreur"] = "Veuillez saisir toutes les informations demandées";
+    }
+
 
 } else {
     $_SESSION["erreur"] = 7;

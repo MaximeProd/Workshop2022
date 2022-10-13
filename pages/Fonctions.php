@@ -63,11 +63,11 @@ function checkfirstConnection(PDO $bdd, $idClient) {
         //On finie par fermer la ressource
         $statement->closeCursor();
     }
-
-    if (isset($liste) and $liste > 0) {
-        return true;
-    }else{
+    //var_dump($liste);
+    if (isset($liste) and sizeof($liste) >= 4) {
         return false;
+    }else{
+        return true;
     }
 }
 
@@ -229,8 +229,25 @@ function insertListe(PDO $bdd,$toTable,Array $args) {
     }
     //var_dump($statement);
     //On réalise l'insertion
+    var_dump($args);
     $statement->execute();
     $statement->closeCursor();
+}
+
+function insertLineQuestionnaire(PDO $bdd, $oldType,$idSalarie,$Qualite) {
+    $query = "INSERT INTO salariepossession(IdType,IdSalarie,Qualite) VALUES ({$oldType},{$idSalarie},{$Qualite})";
+
+    //Affectation des paramètres (Pour rappel les paramètres (p_arg) sont une sécuritée)
+    $statement = $bdd->prepare($query);
+
+
+    //On réalise la requète et on renvoie le résultat
+    $liste = null;
+    if ($statement->execute()) {
+
+        $statement->closeCursor();
+    }
+    return $liste;
 }
 
 function updateLine(PDO $bdd, $oldType,$idSalarie,$Qualite) {
